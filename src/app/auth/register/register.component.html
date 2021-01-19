@@ -1,0 +1,86 @@
+<div class="login-page-wrapper">
+
+    <div class="login-page-section">
+
+        <div class="login-box">
+
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="../../../assets/images/login_img.jpg" alt="" class="login-img">
+                </div>
+            </div>
+
+            <div class="login-section">
+            
+                <div class="login-container w-form">
+
+                    <a href="" class="login-img-link w-inline-block">
+                        <img src="../../../assets/images/mentaLogov2.png" width="124" alt="" class="login-image">
+                    </a>
+
+                    <h1 class="login-titulo">¡Regístrate y empieza Gratis!</h1>
+                    
+                    <div class="texto-login">¿Ya tienes una Cuenta? 
+                        <a href="" class="link-login">
+                            Ingresa aquí
+                        </a>
+                    </div>
+                    
+                    <form class="memberstack-form">
+
+                        <div class="field-wrapper">
+                            <label class="login-label">Email</label>
+
+                            <input type="email" 
+                                    class="login-field w-input" 
+                                    name="email" 
+                                    placeholder="Ingresa tu correo electrónico">
+                        </div>
+                    
+                        <div class="field-wrapper">
+                            <label class="login-label">Contraseña</label>
+                            <input type="password" 
+                                    class="login-field w-input" 
+                                    name="password" 
+                                    placeholder="Ingresa tu contraseña" 
+                                    ng-minlength="8" 
+                                    ng-maxlength="20" 
+                                    ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/" >
+                        </div>
+
+                        <div class="field-wrapper">
+                            <label class="login-label">Confirmar Contraseña</label>
+                            <input type="password" 
+                                    class="login-field w-input" 
+                                    name="passwordc" 
+                                    placeholder="Confirma tu contraseña" >
+                        </div>
+
+                        <br/>
+                        <!-- <div style="display: flex; justify-content:center">
+                            <div vc-recaptcha 
+                                theme="'light'"
+                                key="publicKey" 
+                                on-create="setWidgetId(widgetId)"
+                                on-success="setResponse(response)"
+                                on-expire="cbExpiration()">
+                            </div>
+                        </div> -->
+
+                        <input type="submit" 
+                                value="Submit" 
+                                data-wait="Please wait..." 
+                                class="login-button w-button">
+
+                        <div class="terms-text">Al registrarte, aceptas nuestros 
+                            <a href="#" class="link-login">Términos y Condiciones</a> y 
+                            <a href="#" class="link-login">Aviso de Privacidad</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

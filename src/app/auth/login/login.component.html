@@ -1,0 +1,96 @@
+<div class="login-page-wrapper">
+    
+    <div class="login-page-section">
+      
+        <div class="login-box" ng-app="login_register_app" ng-controller="login_register_controller">
+        
+        <div class="image-section">
+            <div class="image-container">
+                <img src="../../../assets/images/login_img.jpg" alt="" class="login-img">
+            </div>
+        </div>
+
+        <div class="login-section">
+            <div class="login-container w-form">
+                
+                <a href="" class="login-img-link w-inline-block">
+                    <img src="../../../assets/images/mentaLogov2.png" width="124" alt="" class="login-image">
+                </a>
+            
+                <h1 class="login-titulo">Ingresa a tu cuenta</h1>
+
+                <div class="texto-login">¿Eres nuevo? Da click aquí y 
+                    <a href="" class="link-login">crea una cuenta</a>
+                </div>
+            
+                <form class="memberstack-form" autocomplete="on">
+                    
+                    <div class="field-wrapper">
+                        <label for="username" class="login-label">Correo electrónico</label>
+
+                        <input  type="email" 
+                                class="login-field w-input" 
+                                maxlength="256" 
+                                name="username" 
+                                placeholder="Ingresa tu correo electrónico" 
+                                required="" 
+                                autocomplete="suggested">
+                        
+                        <div class="field-status"></div>
+                    </div>
+                    
+                    <div class="field-wrapper">
+                        <label for="password-2" class="login-label">Contraseña</label>
+
+                        <input  type="password" 
+                                class="login-field w-input" 
+                                maxlength="256" 
+                                name="password" 
+                                placeholder="Ingresa tu contraseña" 
+                                required="">
+
+                        <div class="field-status"></div>
+                    </div>
+                    
+                    <a href="recuperarcontrasena" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    
+                    <br/>
+                    
+                    <!-- <div style="display: flex; justify-content:center">
+                        <div vc-recaptcha 
+                            theme="'light'"
+                            key="loginData.publicKey" 
+                            on-create="setWidgetId(widgetId)"
+                            on-success="setResponse(response)"
+                            on-expire="cbExpiration()">
+                        </div>
+                    </div> -->
+                    
+                    <br/>
+                    
+                    <!-- <div class="alert {{alertClass}} alert-dismissible" ng-show="alertMsg" >
+                        <button type="button" 
+                                class="close" 
+                                ng-click="closeMsg()" 
+                                data-dismiss="alert">&times;
+                        </button>
+                    {{alertMessage}}
+                    </div> -->
+
+                    <input type="submit" 
+                            value="Ingresar" 
+                            data-wait="Validando espere..." 
+                            class="login-button w-button">
+
+                    <div class="terms-text">Al registrarte, aceptas nuestros 
+                        <a href="#" class="link-login">Términos y Condiciones</a> y 
+                        <a href="#" class="link-login">Aviso de Privacidad</a>
+                    </div>
+
+                </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
