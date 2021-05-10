@@ -21,19 +21,21 @@
                     <h1 class="login-titulo">¡Regístrate y empieza Gratis!</h1>
                     
                     <div class="texto-login">¿Ya tienes una Cuenta? 
-                        <a href="" class="link-login">
-                            Ingresa aquí
-                        </a>
+                        <a routerLink="/login" class="link-login">Ingresa aquí</a>
                     </div>
                     
-                    <form class="memberstack-form">
+                    <form class="memberstack-form"
+                            id="loginform"
+                            autocomplete="off"
+                            [formGroup]="registerForm"
+                            (ngSubmit)="crearUsuario()">
 
                         <div class="field-wrapper">
                             <label class="login-label">Email</label>
 
                             <input type="email" 
                                     class="login-field w-input" 
-                                    name="email" 
+                                    formControlName="email" 
                                     placeholder="Ingresa tu correo electrónico">
                         </div>
                     
@@ -41,7 +43,7 @@
                             <label class="login-label">Contraseña</label>
                             <input type="password" 
                                     class="login-field w-input" 
-                                    name="password" 
+                                    formControlName="password" 
                                     placeholder="Ingresa tu contraseña" 
                                     ng-minlength="8" 
                                     ng-maxlength="20" 
@@ -52,11 +54,33 @@
                             <label class="login-label">Confirmar Contraseña</label>
                             <input type="password" 
                                     class="login-field w-input" 
-                                    name="passwordc" 
+                                    formControlName="passwordc" 
                                     placeholder="Confirma tu contraseña" >
                         </div>
 
-                        <br/>
+                        <label class="w-checkbox checkbox-field"> 
+
+                            <input type="checkbox" 
+                                    id="checkbox_signup" 
+                                    formControlName="terminos" 
+                                    class="filled-in chk-col-light-blue" 
+                                    checked="">
+                            <label for="checkbox_signup">
+                                <span class="login-label">Acepto Términos y Condiciones de Uso</span>
+                            </label>
+
+                        </label>
+
+                        <div class="field-wrapper">
+                            <div class="login-label text-danger">
+                                <p *ngIf="campoNoValido('email')">* El email es obligatorio.</p>
+                                <p *ngIf="campoNoValido('password')">* Ingresa tu contraseña.</p>
+                                <p *ngIf="campoNoValido('passwordc')">* Ingresa tu contraseña nuevamente.</p>
+                                <p *ngIf="contrasenasNoValidas()">* Las contraseñas deben coincidir.</p>
+                                <p *ngIf="aceptaTerminos()">* Debes aceptar los Términos de Uso.</p>
+                            </div>                            
+                        </div>
+
                         <!-- <div style="display: flex; justify-content:center">
                             <div vc-recaptcha 
                                 theme="'light'"
@@ -72,8 +96,7 @@
                                 data-wait="Please wait..." 
                                 class="login-button w-button">
 
-                        <div class="terms-text">Al registrarte, aceptas nuestros 
-                            <a href="#" class="link-login">Términos y Condiciones</a> y 
+                        <div class="terms-text"> 
                             <a href="#" class="link-login">Aviso de Privacidad</a>
                         </div>
 
