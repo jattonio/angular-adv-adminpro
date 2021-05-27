@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AuthGuard } from '../guards/auth.guard';
 
 import { PagesComponent } from './pages.component';
+import { PerfilComponent } from './perfil/perfil.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
         canActivate: [ AuthGuard ],
         children: [
             { path: '', component: DashboardComponent, data: { titulo: 'Dashboard' } },
+            { path: 'perfil', component: PerfilComponent, data: { titulo: 'Perfil de usuario' } },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' } },
             { path: 'grafica1', component: Grafica1Component, data: { titulo: 'Gráfica #1' } },
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Configuración de Cuenta' } },
